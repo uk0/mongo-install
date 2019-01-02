@@ -18,5 +18,9 @@
     45.32.62.20   mongo_host2  host2
     ```
 
+## 问题
+
+* `bin/`内的文件在 `https://zmatsh.b0.upaiyun.com/mongo_tar/mongodb.tar.gz`
+
 
 ## 感谢兽兽提供脚本
