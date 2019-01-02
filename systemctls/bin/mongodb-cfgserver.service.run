@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source MONGO_PACKAGE_PATH/env/env.sh
+
+$MONGO_HOME/bin/mongod -f $MONGO_HOME/conf/config.conf

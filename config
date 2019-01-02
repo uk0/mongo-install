@@ -1,0 +1,21 @@
+
+MONGO_ZOOKEEPER=mongo_host1,mongo_host2,mongo_host3
+
+CONFIG_SERVER=mongo_host1,mongo_host2,mongo_host3
+
+ROUTE_SERVER=mongo_host1,mongo_host2,mongo_host3
+
+INIT_CFS=mongo_host1
+
+# 需要在这几台装MongoDB
+MONGOS=mongo_host1,mongo_host2,mongo_host3
+
+SHARD_NODE=mongo_host1,mongo_host2,mongo_host3
+
+# 副本Name
+MONGO_REPLSET_NAME=configs
+
+# congfig server 最大连接数
+MONGO_MAX_CONNS=20000
+
+CONFIG_PORT_SERVER=27000

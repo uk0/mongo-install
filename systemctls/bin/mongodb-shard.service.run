@@ -1,0 +1,18 @@
+#!/bin/bash
+
+source MONGO_PACKAGE_PATH/env/env.sh
+
+if [ $# -ne 2 ]
+then
+ echo "Usage: dscs-mongodb-shard.service.run <GroupIndex> <NearId>"
+ exit 1
+fi
+
+__TD_MDB_GRP_ID=$1
+__TD_MDB_NEAR_FLAG=$2
+__TD_MDB_INS_PORT=$(tdGetLocalShardPort $__TD_MDB_GRP_ID $__TD_MDB_NEAR_FLAG)
+__TD_MDB_INS_INDEX=$(($__TD_MDB_INS_PORT-$TD_MDB_SHARD_PORT_BASE))
+
+[ -d $TD_DATA/mongodb/data/shardG$__TD_MDB_GRP_ID$__TD_MDB_NEAR_FLAG/db ] && echo -e "\033[1m  Data Load Success \033[0m" || mkdir -p $TD_DATA/mongodb/data/shardG$__TD_MDB_GRP_ID$__TD_MDB_NEAR_FLAG/db 
+echo "$TD_DATA/mongodb/data/shardG$__TD_MDB_GRP_ID$__TD_MDB_NEAR_FLAG/db" >> MONGO_PACKAGE_PATH/data_path
+$MONGO_HOME/bin/mongod --port $__TD_MDB_INS_PORT --logpath $TD_DATA/logs/mongodb/shard$__TD_MDB_INS_INDEX.log --logappend --timeStampFormat ctime --pidfilepath $TD_DATA/pids/mongodb/shard-$__TD_MDB_GRP_ID-$__TD_MDB_NEAR_FLAG.pid --fork --oplogSize 10240 --replSet TOD-Shard-$__TD_MDB_INS_INDEX --enableMajorityReadConcern --shardsvr --storageEngine wiredTiger --dbpath $TD_DATA/mongodb/data/shardG$__TD_MDB_GRP_ID$__TD_MDB_NEAR_FLAG/db --journalCommitInterval 100 --wiredTigerCacheSizeGB 1

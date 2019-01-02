@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source MONGO_PACKAGE_PATH/env/env.sh
+
+$MONGO_HOME/bin/mongos --port 27017 --logpath $TD_DATA/logs/mongodb/router.log --logappend --timeStampFormat ctime --pidfilepath $TD_DATA/pids/mongodb/router.pid --fork --configdb configs/mongo_host1:27018,mongo_host2:27018,mongo_host3:27018 --chunkSize 1024

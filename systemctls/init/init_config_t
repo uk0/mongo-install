@@ -1,0 +1,29 @@
+{
+    _id:"configs",
+    configsvr:true,
+    members:[
+        {_id:${start_num},host:"${start_cfs_host}:${start_cfs_port}",priority:2},
+        {_id:${num_1},host:"${cfs_host_1}:${cfs_port_1}"},
+        {_id:${num_2},host:"${cfs_host_2}:${cfs_port_2}"},
+        {_id:${num_3},host:"${cfs_host_3}:${cfs_port_3}"},
+        {_id:${num_4},host:"${cfs_host_4}:${cfs_port_4}"},
+        {_id:${num_5},host:"${cfs_host_5}:${cfs_port_5}"},
+        {_id:${num_6},host:"${cfs_host_6}:${cfs_port_6}"},
+        {_id:${num_7},host:"${cfs_host_7}:${cfs_port_7}"},
+        {_id:${num_8},host:"${cfs_host_8}:${cfs_port_8}"},
+        {_id:${num_9},host:"${cfs_host_9}:${cfs_port_9}"},
+        {_id:${num_10},host:"${cfs_host_10}:${cfs_port_10}"},
+        {_id:${num_11},host:"${cfs_host_11}:${cfs_port_11}"},
+        {_id:${num_12},host:"${cfs_host_12}:${cfs_port_12}"},
+        {_id:${num_13},host:"${cfs_host_13}:${cfs_port_13}"},
+        {_id:${num_14},host:"${cfs_host_14}:${cfs_port_14}"},
+        {_id:${num_15},host:"${cfs_host_15}:${cfs_port_15}"},
+        {_id:${num_16},host:"${cfs_host_16}:${cfs_port_16}"},
+        {_id:${num_17},host:"${cfs_host_17}:${cfs_port_17}"},
+        {_id:${num_18},host:"${cfs_host_18}:${cfs_port_18}"},
+        {_id:${num_19},host:"${cfs_host_19}:${cfs_port_19}"},
+        {_id:${num_20},host:"${cfs_host_20}:${cfs_port_20}"},
+        {_id:${end_num},host:"${end_cfs_host}:${end_cfs_port}"}
+    ],
+    settings:{getLastErrorDefaults:{w:"majority",wtimeout:5000}}
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+source MONGO_PACKAGE_PATH/env/env.sh
+
+kill -15 `cat $TD_DATA/pids/mongodb/router.pid`

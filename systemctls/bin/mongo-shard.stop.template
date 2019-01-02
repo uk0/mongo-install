@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source MONGO_PACKAGE_PATH/env/env.sh
+
+${SCRIPT_CURR}
+${SCRIPT_NEXT}
+${SCRIPT_PREV}
